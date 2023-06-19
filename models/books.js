@@ -15,7 +15,7 @@ const BookSchema = new mongoose.Schema(
           maxlength: 50,
         },
         ISBNCode: {
-          type: String,
+          type: Number,
           required: [true, 'Please provide the ISBN number'],
           maxlength: 30,
         },
@@ -35,14 +35,14 @@ const BookSchema = new mongoose.Schema(
             maxlength: 100,
           },
           review: {
-            type: String,
+            type: Number,
             required: [true, 'Please provide the book review'],
             maxlength: 100,
           },
           price: {
-            type: String,
+            type: Number,
             required: [true, 'Please provide the book price'],
-            maxlength: 100,
+            maxlength: 3,
           },
       },
 )
