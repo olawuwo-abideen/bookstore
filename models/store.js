@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 
-const StoreSchema = new mongoose.Schema(
+const storeSchema = new mongoose.Schema(
     {
         name: {
           type: String,
@@ -21,13 +21,12 @@ const StoreSchema = new mongoose.Schema(
         },
         phoneNumber: {
             type: Number,
-            required: [true, 'Please provide the link'],
-            maxlength: 12,
+            required: [true, 'Please provide the link']
           },
         employee: {
             type: String,
             required: [true, 'Please provide the employee name'],
-            maxlength: 12,
+            maxlength: 50,
           },
       },
 
@@ -42,4 +41,4 @@ const StoreSchema = new mongoose.Schema(
 
 
 
-module.exports = mongoose.model('Store', StoreSchema);
+module.exports = mongoose.model('Store', storeSchema);

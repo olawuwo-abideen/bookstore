@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 
-const EmployeeSchema = new mongoose.Schema(
+const employeeSchema = new mongoose.Schema(
     {
         firstName: {
           type: String,
@@ -12,7 +12,7 @@ const EmployeeSchema = new mongoose.Schema(
         lastName: {
           type: String,
           required: [true, 'Please provide the description'],
-          maxlength: 100,
+          maxlength: 50,
         },
         birthDate: {
           type: Date,
@@ -20,30 +20,28 @@ const EmployeeSchema = new mongoose.Schema(
         },
         address: {
             type: String,
-            required: [true, 'Please provide the link'],
-            maxlength: 12,
+            required: [true, 'Please provide your address'],
+            maxlength: 100,
           },
         phoneNumber: {
-            type: String,
+            type: Number,
             required: [true, 'Please provide your phone number'],
-            maxlength: 12,
           },
-          email: {
+        email: {
             type: String,
             required: [true, 'Please provide your email'],
           },
         hireDate: {
             type: Date,
-            required: [true, 'Please provide your hired date'],
-            maxlength: 12,
-          },
+            required: [true, 'Please provide your hired date']          },
+        
         employeeNumber: {
             type: Number,
             required: [true, 'Please provide the employee number'],
             maxlength: 12,
           },
         store: {
-            type: Number,
+            type: String,
             required: [true, 'Please provide the store name'],
             maxlength: 12,
           },
@@ -60,4 +58,4 @@ const EmployeeSchema = new mongoose.Schema(
 
 
 
-module.exports = mongoose.model('Employee', EmployeeSchema);
+module.exports = mongoose.model('Employee', employeeSchema);

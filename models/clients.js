@@ -2,25 +2,25 @@ const mongoose = require('mongoose');
 
 
 
-const ClientSchema = new mongoose.Schema(
+const clientSchema = new mongoose.Schema(
     {
         Name: {
           type: String,
-          required: [true, 'Please provide your first name'],
+          required: [true, 'Please provide your  name'],
           maxlength: 50,
         },
         address: {
           type: String,
-          required: [true, 'Please provide the description'],
+          required: [true, 'Please provide the address'],
           maxlength: 100,
         },
         phoneNumber: {
-          type: Date,
-          required: [true, 'Please provide your date of birth']
+          type: Number,
+          required: [true, 'Please provide your phone number']
         },
         email: {
             type: String,
-            required: [true, 'Please provide the link'],
+            required: [true, 'Please provide your email'],
           },
       },
 
@@ -30,9 +30,4 @@ const ClientSchema = new mongoose.Schema(
 
 
 
-
-
-
-
-
-module.exports = mongoose.model('Client', ClientSchema);
+module.exports = mongoose.model('Client', clientSchema);

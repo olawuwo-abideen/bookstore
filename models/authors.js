@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 
-const AuthorSchema = new mongoose.Schema(
+const authorSchema = new mongoose.Schema(
     {
         name: {
           type: String,
@@ -11,30 +11,24 @@ const AuthorSchema = new mongoose.Schema(
         },
         description: {
           type: String,
-          required: [true, 'Please provide the description'],
+          required: [true, 'Please provide the book description'],
           maxlength: 100,
         },
         books: {
           type: String,
           required: [true, 'Please provide the book title'],
-          maxlength: 100,
+          maxlength: 50,
         },
         website: {
             type: String,
-            required: [true, 'Please provide the link'],
-            maxlength: 100,
+            required: [true, 'Please provide the website link'],
+            maxlength: 50,
           },
-      },
+      }, 
 
 )
 
 
 
 
-
-
-
-
-
-
-module.exports = mongoose.model('Author', AuthorSchema);
+module.exports = mongoose.model('Author', authorSchema);

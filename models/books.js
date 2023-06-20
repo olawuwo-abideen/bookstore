@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 
 
-const BookSchema = new mongoose.Schema(
+const bookSchema = new mongoose.Schema(
     {
         title: {
           type: String,
@@ -22,14 +22,14 @@ const BookSchema = new mongoose.Schema(
         store: {
             type: String,
             required: [true, 'Please provide the store name'],
-            maxlength: 100,
+            maxlength: 50,
           },
-          genre: {
+        genre: {
             type: String,
             required: [true, 'Please provide the genre of the book'],
-            maxlength: 100,
+            maxlength: 50,
           },
-         description: {
+        description: {
             type: String,
             required: [true, 'Please provide the book description'],
             maxlength: 100,
@@ -37,12 +37,11 @@ const BookSchema = new mongoose.Schema(
           review: {
             type: Number,
             required: [true, 'Please provide the book review'],
-            maxlength: 100,
+            values: [ 1, 2, 3, 4, 5],
           },
           price: {
             type: Number,
             required: [true, 'Please provide the book price'],
-            maxlength: 3,
           },
       },
 )
@@ -56,4 +55,4 @@ const BookSchema = new mongoose.Schema(
 
 
 
-module.exports = mongoose.model('Book', BookSchema);
+module.exports = mongoose.model('Book', bookSchema);
