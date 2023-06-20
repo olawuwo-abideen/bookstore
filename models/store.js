@@ -24,6 +24,11 @@ const StoreSchema = new mongoose.Schema(
             required: [true, 'Please provide the link'],
             maxlength: 12,
           },
+        employee: {
+            type: String,
+            required: [true, 'Please provide the employee name'],
+            maxlength: 12,
+          },
       },
 
 )
