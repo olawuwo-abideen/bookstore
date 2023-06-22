@@ -6,31 +6,16 @@ const router = express.Router();
 
 
 const {
-    getAllBooks,
-    createBook,
-    getBook,
-    updateBook,
-    getAllBooksAuthors,
-    getAllBooksReviews
-    } = require('../controllers/books')
+    getAllAuthors,
+    createAuthors,
+    updateAuthors,
+    getAuthors,
+    getAuthorsBooks
+    } = require('../controllers/authors')
 
-router.route('/books').get(getAllBooks).post(createBook)
-router.route('/books/:id').get(getBook).patch(updateBook)
-router.route('/books/:id/authors').get(getAllBooksAuthors)
-router.route('/books/:id/reviews').get(getAllBooksReviews)
-
-
-
-
-
-
-
-
-
-
-
-
-
+router.route('/authors').get(getAllAuthors).post(createAuthors)
+router.route('/authors/:id').patch(updateAuthors).get(getAuthors)
+router.route('/authors/:id/books').get(getAuthorsBooks)
 
 
 
