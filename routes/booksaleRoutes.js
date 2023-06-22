@@ -5,25 +5,12 @@ const router = express.Router();
 
 
 
+const {
+    getBookSales,
+    createBookSales
+    } = require('../controllers/booksale')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+router.route('/booksales').get(getBookSales).post(createBookSales)
 
 
 
