@@ -11,13 +11,13 @@ const router = express.Router();
 
 const {
     getAllClient,
+    createClient,
     getClient,
-    createBook
+    updateClient
     } = require('../controllers/employee')
 
-router.route('/clients').get(getAllClient).post(getAllClient)
-router.route('/clients/:id').get(getBook).post(updateBook)
-
+router.route('/clients').get(getAllClient).post(createClient)
+router.route('/clients/:id').get(getClient).patch(updateClient)
 
 
 
