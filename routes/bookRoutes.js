@@ -11,13 +11,14 @@ const {
     createBook,
     getBook,
     updateBook,
-    deleteBook ,
-   
+    getAllBooksAuthors,
+    getAllBooksReviews
     } = require('../controllers/books')
 
-router.route('/').get(getAllBooks).post(createBook)
-router.route('/:id').get(getBook).patch(updateBook).delete(deleteBook)
-
+router.route('/books').get(getAllBooks).post(createBook)
+router.route('/books/:id').get(getBook).patch(updateBook)
+router.route('/books/:id/authors').get(getAllBooksAuthors)
+router.route('/books/:id/reviews').get(getAllBooksReviews)
 
 
 
