@@ -6,11 +6,11 @@ const router = express.Router();
 
 
 const {
-    getBookSales,
+    getAllBookSales,
     createBookSales
     } = require('../controllers/booksale')
 
-router.route('/booksales').get(getBookSales).post(createBookSales)
+router.route('/booksales').get(getAllBookSales).post(createBookSales)
 
 
 
