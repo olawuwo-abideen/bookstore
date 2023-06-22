@@ -4,19 +4,14 @@ const router = express.Router();
 
 
 const {
-    getAllBooks,
-    createBook,
-    getBook,
-    updateBook,
-    getAllBooksAuthors,
-    getAllBooksReviews
+    getAllEmployee,
+    createEmployee,
+    getEmployee,
+    updateEmployee
     } = require('../controllers/employee')
 
-router.route('/books').get(getAllBooks).post(createBook)
-router.route('/books/:id').get(getBook).patch(updateBook)
-router.route('/books/:id/authors').get(getAllBooksAuthors)
-router.route('/books/:id/reviews').get(getAllBooksReviews)
-
+router.route('/employees').get(getAllEmployee).post(createEmployee)
+router.route('/employees/:id').get(getEmployee).patch(updateEmployee)
 
 
 
