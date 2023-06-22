@@ -9,10 +9,10 @@ const router = express.Router();
 
 
 const {
-    getBookReview
+    createClientBookReview
     } = require('../controllers/clientsreview')
 
-router.route('/clientreviews').post(getBookReview)
+router.route('/clientreviews').post( createClientBookReview)
 
 
 
