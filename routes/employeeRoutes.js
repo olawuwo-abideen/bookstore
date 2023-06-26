@@ -8,7 +8,7 @@ const {
     createEmployee,
     getEmployee,
     updateEmployee
-    } = require('../controllers/employee')
+    } = require('../controllers/employees')
 
 router.route('/employees').get(getAllEmployee).post(createEmployee)
 router.route('/employees/:id').get(getEmployee).patch(updateEmployee)

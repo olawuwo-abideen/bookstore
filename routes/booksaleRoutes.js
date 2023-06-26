@@ -8,7 +8,7 @@ const router = express.Router();
 const {
     getAllBookSales,
     createBookSales
-    } = require('../controllers/booksale')
+    } = require('../controllers/booksales')
 
 router.route('/booksales').get(getAllBookSales).post(createBookSales)
 

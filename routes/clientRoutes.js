@@ -14,7 +14,7 @@ const {
     createClient,
     getClient,
     updateClient
-    } = require('../controllers/client')
+    } = require('../controllers/clients')
 
 router.route('/clients').get(getAllClient).post(createClient)
 router.route('/clients/:id').get(getClient).patch(updateClient)

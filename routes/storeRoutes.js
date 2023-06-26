@@ -11,7 +11,7 @@ const {
     getStoreBooksales,
     updateStores
     
-    } = require('../controllers/store')
+    } = require('../controllers/stores')
 
 router.route('/stores').get(getAllStores).post(createStores)
 router.route('/stores/:id').get(getStore).patch(updateStores)

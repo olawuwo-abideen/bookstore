@@ -27,9 +27,4 @@ router.route('/clientreviews').post( createClientBookReview)
 
 
 
-
-
-
-
-
 module.exports = router;
