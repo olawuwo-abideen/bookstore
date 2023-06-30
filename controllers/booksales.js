@@ -9,8 +9,8 @@ const getAllBookSales = asyncWrapper(async (req, res) => {
 
 
 const createBookSales = asyncWrapper(async (req, res) => {
-    const allbooksales = await BookSales.create(req.body)
-    res.status(201).json({allbooksales})
+    const createbooksales = await BookSales.create(req.body)
+    res.status(201).json({createbooksales})
 });
 
 

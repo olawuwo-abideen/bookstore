@@ -10,7 +10,8 @@ const getAllClient = asyncWrapper(async (req, res) => {
 
 
 const createClient = asyncWrapper(async (req, res) => {
-     
+    const createclient = await Clients.create(req.body)
+    res.status(201).json({createclient})
 });
 
 

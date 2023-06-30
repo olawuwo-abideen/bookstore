@@ -8,7 +8,8 @@ const  getAllStores = asyncWrapper(async (req, res) => {
 
 
 const  createStores = asyncWrapper(async (req, res) => {
-     
+    const createstore = await Stores.create(req.body)
+    res.status(201).json({createstore})
 });
 
 

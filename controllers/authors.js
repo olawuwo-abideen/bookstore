@@ -14,8 +14,8 @@ const getAllAuthors = asyncWrapper(async (req, res) => {
 
 
 const createAuthors = asyncWrapper(async (req, res) => {
-    const author = await Authors.create(req.body)
-    res.status(201).json({author})
+    const createauthor = await Authors.create(req.body)
+    res.status(201).json({createauthor})
 });
 
 
