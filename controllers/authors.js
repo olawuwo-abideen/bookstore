@@ -1,6 +1,22 @@
 const  Authors = require('../models/authors');
 
 
+const getAllAuthors = asyncWrapper(async (req, res) => {
+    const author = await Authors.find({})
+    res.status(200).json({author})   
+});
+
+
+
+
+
+
+
+
+const createAuthors = asyncWrapper(async (req, res) => {
+    const author = await Authors.create(req.body)
+    res.status(201).json({author})
+});
 
 
 
@@ -13,6 +29,14 @@ const  Authors = require('../models/authors');
 
 
 
+const  updateAuthors = asyncWrapper(async (req, res) => {
+     
+});
+
+
+const getAuthors = asyncWrapper(async (req, res) => {
+     
+});
 
 
 
@@ -20,17 +44,9 @@ const  Authors = require('../models/authors');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+const getAuthorsBooks = asyncWrapper(async (req, res) => {
+     
+});
 
 
 
