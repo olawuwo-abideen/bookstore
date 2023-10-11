@@ -1,8 +1,10 @@
 require('dotenv').config();
 const express = require('express');
-const connectDB = require('./db/connect');
 const notFound = require('./middleware/not-found');
 const errorHandlerMiddleware = require('./middleware/error-handler');
+const cookieParser = require('cookie-parser')
+const rateLimit = require('express-rate-limit')
+const helmet = require("helmet")
 
 // database
 const connectDB = require('./db/connect');
@@ -20,7 +22,18 @@ const  storeRouter = require('./routes/storeRoutes')
 // midddlewares
 app.use(notFound)
 app.use(errorHandlerMiddleware)   
+app.use(helmet());
+app.use(cookieParser())
 
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000, 
+	limit: 100, 
+	standardHeaders: 'draft-7', 
+	legacyHeaders: false, 
+
+})
+
+app.use(limiter)
 
 
 app.use('/api/v1/author', authorRouter);
