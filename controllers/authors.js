@@ -14,16 +14,12 @@ const getAllAuthors = asyncWrapper(async (req, res) => {
 
 
 
-const createAuthors = asyncWrapper(async (req, res) => {
-    const createauthor = await Authors.create(req.body)
-    res.status(201).json({createauthor})
-});
 
 
-const createProduct = async (req, res) => {
+const createAuthors = async (req, res) => {
     req.body.user = req.user.userId;
-    const product = await Product.create(req.body);
-    res.status(StatusCodes.CREATED).json({ product });
+    const createauthor = await Authors.create(req.body);
+    res.status(StatusCodes.CREATED).json({ createauthor });
   };
 
 
