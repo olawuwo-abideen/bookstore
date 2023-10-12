@@ -29,7 +29,7 @@ const bookSaleSchema = new mongoose.Schema(
             maxlength: 50,
           },
         totalAmount: {
-            type: String,
+            type: Number,
             required: [true, 'Please provide the total amount']
           },
       },

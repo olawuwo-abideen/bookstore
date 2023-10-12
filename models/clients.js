@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const clientSchema = new mongoose.Schema(
     {
-        Name: {
+        fullName: {
           type: String,
           required: [true, 'Please provide your  name'],
           maxlength: 50,
