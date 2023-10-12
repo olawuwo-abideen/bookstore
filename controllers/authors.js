@@ -2,14 +2,11 @@ const  Authors = require('../models/authors');
 const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
 
-const getAllAuthors = asyncWrapper(async (req, res) => {
-    const author = await Authors.find({})
-    res.status(200).json({author})   
-});
 
 
-
-
+const getAllAuthors = async (req, res) => {
+    
+  };
 
 
 
@@ -30,25 +27,20 @@ const createAuthors = async (req, res) => {
 
 
 
-
-const  updateAuthors = asyncWrapper(async (req, res) => {
-     
-});
-
-
-const getAuthors = asyncWrapper(async (req, res) => {
-     
-});
+  const updateAuthors = async (req, res) => {
+    
+};
 
 
+const getAuthors = async (req, res) => {
+    
+};
 
 
+const getAuthorsBooks = async (req, res) => {
+    
+};
 
-
-
-const getAuthorsBooks = asyncWrapper(async (req, res) => {
-     
-});
 
 
 
