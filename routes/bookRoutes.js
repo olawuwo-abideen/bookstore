@@ -11,10 +11,10 @@ const {
     getBooksReviews
     } = require('../controllers/books')
 
-router.route('/books').get(getAllBooks).post(createBook)
-router.route('/books/:id').get(getBook).patch(updateBook)
-router.route('/books/:id/authors').get(getBooksAuthors)
-router.route('/books/:id/reviews').get(getBooksReviews)
+router.route('/').get(getAllBooks).post(createBook)
+// router.route('/book/:id').get(getBook).patch(updateBook)
+// router.route('/book/:id/authors').get(getBooksAuthors)
+// router.route('/book/:id/reviews').get(getBooksReviews)
 
 
 
