@@ -29,7 +29,7 @@ const getBook = async (req, res) => {
     if(!book){
         return next(createCustomError (`No book with id : ${bookID}`, 404))
     }
-res.status(200).json({book})  
+res.status(StatusCodes.OK).json({book})  
     
 
 };
