@@ -4,7 +4,10 @@ const CustomError = require('../errors');
 
 
 
-
+const createBook  = async (req, res) => {
+    const createbook = await Books.create(req.body)
+    res.status(StatusCodes.CREATED).json({createbook})
+};
 
 const getAllBooks = async (req, res) => {
     const books = await Books.find({})
@@ -12,42 +15,42 @@ const getAllBooks = async (req, res) => {
     
 };
 
-
-
-
-const createBook  = async (req, res) => {
-    const createbook = await Books.create(req.body)
-    res.status(StatusCodes.CREATED).json({createbook})
-};
-
-
-
-
-const getBook = async (req, res) => {
+const getSingleBook = async (req, res) => {
     const {id:bookID} = req.params
-    const book = await Task.findOne({_id:bookID});
+    const book = await Books.findOne({_id:bookID});
     if(!book){
-        return next(createCustomError (`No book with id : ${bookID}`, 404))
+        throw new CustomError.NotFoundError(`No book with id : ${bookID}`);
     }
 res.status(StatusCodes.OK).json({book})  
     
 
 };
 
-
-
 const updateBook = async (req, res) => {
     const {id: bookID} = req.params
-    const book = await Book.findOneAndUpdate({_id: bookID}, req.body,{
+    const book = await Books.findOneAndUpdate({_id: bookID}, req.body,{
         new: true,
         runValidators: true 
 });
     if(!book) {
-        return next(createCustomError (`No task with id : ${bookID}`, 404))
+        throw new CustomError.NotFoundError(`No book with id : ${bookID}`);
+        
     }
-    res.status(200).json({book}) 
+    res.status(StatusCodes.OK).json({book}) 
 };
 
+const deleteBook = async (req, res) => {
+    const { id: bookID } = req.params;
+  
+    const book = await Books.findOne({ _id: bookID });
+  
+    if (!book) {
+      throw new CustomError.NotFoundError(`No book with id : ${bookID}`);
+    }
+  
+    await book.remove();
+    res.status(StatusCodes.OK).json({ msg: 'Success! Book removed.' });
+  };
 
 
 
@@ -77,9 +80,11 @@ const getBooksReviews = async (req, res) => {
 
 
 module.exports = {
-    getAllBooks,
     createBook,
-    getBook,
+    getAllBooks,
+    getSingleBook,
+    deleteBook,
+
     updateBook,
     getBooksAuthors,
     getBooksReviews
