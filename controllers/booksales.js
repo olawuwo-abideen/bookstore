@@ -1,19 +1,20 @@
 const  BookSales = require('../models/booksales');
-
+const { StatusCodes } = require('http-status-codes');
+const CustomError = require('../errors');
 
 
 
 
 const getAllBookSales = async (req, res) => {
     const allbooksales = await BookSales.find({})
-    res.status(200).json({allbooksales}) 
+    res.status(StatusCodes.OK).json({allbooksales}) 
 };
 
 
 
 const createBookSales = async (req, res) => {
     const createbooksales = await BookSales.create(req.body)
-    res.status(201).json({createbooksales}) 
+    res.status(StatusCodes.CREATED).json({createbooksales}) 
 };
 
 
