@@ -1,17 +1,18 @@
 const Stores = require('../models/store');
-
+const { StatusCodes } = require('http-status-codes');
+const CustomError = require('../errors');
 
 
 const  getAllStores = async (req, res) => {
     const allstore = await Stores.find({})
-    res.status(200).json({allstore}) 
+    res.status(StatusCodes.OK).json({allstore}) 
 };
 
 
 
 const createStores = async (req, res) => {
     const createstore = await Stores.create(req.body)
-    res.status(201).json({createstore})
+    res.status(StatusCodes.CREATED).json({createstore})
 };
 
 

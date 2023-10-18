@@ -1,5 +1,5 @@
 const   ClientReviews = require('../models/clientreviews');
-
+const { StatusCodes } = require('http-status-codes');
 
 
 
@@ -9,7 +9,7 @@ const   ClientReviews = require('../models/clientreviews');
 
 const createClientBookReview = async (req, res) => {
     const createclientbookreview = await ClientReviews.create(req.body)
-    res.status(201).json({createclientbookreview})
+    res.status(StatusCodes.OK).json({createclientbookreview})
 };
 
 
