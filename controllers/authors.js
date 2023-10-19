@@ -4,7 +4,6 @@ const CustomError = require('../errors');
 
 
 const createAuthors = async (req, res) => {
-  req.body.user = req.user.userId;
   const createauthor = await Authors.create(req.body);
   res.status(StatusCodes.CREATED).json({createauthor});
 };

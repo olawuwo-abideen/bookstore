@@ -55,8 +55,8 @@ const deleteBook = async (req, res) => {
 
 
 const getBooksAuthors = async (req, res) => {
-    const tasks = await Task.find({})
-    res.status(200).json({tasks})   
+    const books = await Books.find({})
+    res.status(200).json({books})   
     
 };
 
@@ -67,8 +67,8 @@ const getBooksAuthors = async (req, res) => {
 
 
 const getBooksReviews = async (req, res) => {
-    const tasks = await Task.find({})
-    res.status(200).json({tasks})  
+    const books = await Books.find({})
+    res.status(200).json({books})  
 };
 
 
@@ -84,7 +84,6 @@ module.exports = {
     getAllBooks,
     getSingleBook,
     deleteBook,
-
     updateBook,
     getBooksAuthors,
     getBooksReviews

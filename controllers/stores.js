@@ -3,6 +3,12 @@ const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
 
 
+
+const createStores = async (req, res) => {
+    const createstore = await Stores.create(req.body)
+    res.status(StatusCodes.CREATED).json({createstore})
+};
+
 const  getAllStores = async (req, res) => {
     const allstore = await Stores.find({})
     res.status(StatusCodes.OK).json({allstore}) 
@@ -10,10 +16,7 @@ const  getAllStores = async (req, res) => {
 
 
 
-const createStores = async (req, res) => {
-    const createstore = await Stores.create(req.body)
-    res.status(StatusCodes.CREATED).json({createstore})
-};
+
 
 
 const getStore = async (req, res) => {
@@ -43,18 +46,6 @@ const updateStores = async (req, res) => {
 const  getStoreBooksales = async (req, res) => {
     
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
