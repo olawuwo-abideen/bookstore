@@ -63,9 +63,6 @@ const getBooksAuthors = async (req, res) => {
 
 
 
-
-
-
 const getBooksReviews = async (req, res) => {
     const books = await Books.find({})
     res.status(200).json({books})  

@@ -53,25 +53,9 @@ const deleteAuthor = async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
 const getAuthorsBooks = async (req, res) => {
     
 };
-
-
-
-
-
-
 
 
 
