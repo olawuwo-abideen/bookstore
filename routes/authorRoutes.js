@@ -9,21 +9,14 @@ const {
     getAllAuthors,
     createAuthors,
     updateAuthors,
-    getAuthors,
+    getSingleAuthor,
+    deleteAuthor,
     getAuthorsBooks
     } = require('../controllers/authors')
 
 router.route('/authors').get(getAllAuthors).post(createAuthors)
-router.route('/authors/:id').patch(updateAuthors).get(getAuthors)
+router.route('/authors/:id').patch(updateAuthors).get(getSingleAuthor).delete(deleteAuthor)
 router.route('/authors/:id/books').get(getAuthorsBooks)
-
-
-
-
-
-
-
-
 
 
 

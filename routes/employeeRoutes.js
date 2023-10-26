@@ -4,14 +4,14 @@ const router = express.Router();
 
 
 const {
-    getAllEmployee,
+    getAllEmployees,
     createEmployee,
-    getEmployee,
+    getSingleEmployee,
     updateEmployee
     } = require('../controllers/employees')
 
-router.route('/employees').get(getAllEmployee).post(createEmployee)
-router.route('/employees/:id').get(getEmployee).patch(updateEmployee)
+router.route('/employees').get(getAllEmployees).post(createEmployee)
+router.route('/employees/:id').get(getSingleEmployee).patch(updateEmployee)
 
 
 

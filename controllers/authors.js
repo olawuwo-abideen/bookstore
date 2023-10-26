@@ -23,7 +23,16 @@ const getAllAuthors = async (req, res) => {
     };
 
 const updateAuthors = async (req, res) => {
-
+    const {id:authorId} = req.params
+    const author = await Authors.findOneAndUpdate({_id:authorId}, req.body,{
+        new: true,
+        runValidators: true 
+});
+    if(!author) {
+        throw new CustomError.NotFoundError(`No author with id : ${authorId}`);
+        
+    }
+    res.status(StatusCodes.OK).json({author}) 
 };
 
 const deleteAuthor = async (req, res) => {
@@ -45,7 +54,8 @@ const deleteAuthor = async (req, res) => {
 
 
 const getAuthorsBooks = async (req, res) => {
-    
+     
+  
 };
 
 

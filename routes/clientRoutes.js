@@ -12,12 +12,12 @@ const router = express.Router();
 const {
     getAllClient,
     createClient,
-    getClient,
+    getSingleClient,
     updateClient
     } = require('../controllers/clients')
 
 router.route('/clients').get(getAllClient).post(createClient)
-router.route('/clients/:id').get(getClient).patch(updateClient)
+router.route('/clients/:id').get(getSingleClient).patch(updateClient)
 
 
 
