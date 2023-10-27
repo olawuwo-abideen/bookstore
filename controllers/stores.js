@@ -1,4 +1,7 @@
 const Stores = require('../models/store');
+const  Books = require('../models/books');
+const  Employees = require('../models/employees');
+const  BookSales = require('../models/booksales');
 const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
 
@@ -26,17 +29,27 @@ const getSingleStore = async (req, res) => {
 
 };
 
-
-
 const getStoreBooks = async (req, res) => {
+    const {id:storeId} = req.params;
+    const storebooks = await Books.find({store:storeId});
+    if(!storebooks || storebooks.length === 0 ) {
+      throw new CustomError.NotFoundError(`No books for the store with id  : ${storeId}`);
     
-};
+  };
+  res.status(StatusCodes.OK).json({storebooks}) 
+  }
+  
 
 
 const getStoreEmployees = async (req, res) => {
+    const {id:storeId} = req.params;
+    const storeemployee = await Employees.find({store:storeId});
+    if(!storeemployee || storeemployee.length === 0 ) {
+      throw new CustomError.NotFoundError(`No employee for the store with id  : ${storeId}`);
     
-};
-
+  };
+  res.status(StatusCodes.OK).json({storebooks}) 
+  }
 
 const updateStores = async (req, res) => {
     const {id:storeId} = req.params
@@ -53,20 +66,15 @@ const updateStores = async (req, res) => {
 
 
 
-
-
-const  getStoreBooksales = async (req, res) => {
+const getStoreBooksales = async (req, res) => {
+    const {id:storeId} = req.params;
+    const storebooksales = await BookSales.find({store:storeId});
+    if(!storebooksales || storebooksales.length === 0 ) {
+      throw new CustomError.NotFoundError(`No booksales for the store with id  : ${storeId}`);
     
-};
-
-
-
-
-
-
-
-
-
+  };
+  res.status(StatusCodes.OK).json({storebooksales}) 
+  }
 
 
 

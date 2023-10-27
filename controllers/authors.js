@@ -1,4 +1,5 @@
 const  Authors = require('../models/authors');
+const  Books = require('../models/books');
 const { StatusCodes } = require('http-status-codes');
 const CustomError = require('../errors');
 
@@ -49,15 +50,15 @@ const deleteAuthor = async (req, res) => {
   };
 
 
-
-
-
-
-const getAuthorsBooks = async (req, res) => {
-     
+  const getAuthorBooks = async (req, res) => {
+  const {id:authorId} = req.params;
+  const authorbooks = await Books.find({author:authorId});
+  if(!authorbooks || authorbooks.length === 0 ) {
+    throw new CustomError.NotFoundError(`No book for the author with id  : ${authorId}`);
   
 };
-
+res.status(StatusCodes.OK).json({authorbooks}) 
+}
 
 
 
@@ -68,7 +69,7 @@ module.exports = {
     getAllAuthors,
     updateAuthors,
     deleteAuthor,
-    getAuthorsBooks
+    getAuthorBooks
 }
 
 
