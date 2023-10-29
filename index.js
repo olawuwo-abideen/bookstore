@@ -23,7 +23,6 @@ const  booksaleRouter = require('./routes/clientRoutes')
 const  clientreviewRouter = require('./routes/clientreviewRoutes')
 const  employeeRouter = require('./routes/employeeRoutes')
 const  storeRouter = require('./routes/storeRoutes')
-
 const  bookRouter = require('./routes/bookRoutes')
 
 // middleware
