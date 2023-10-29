@@ -4,24 +4,24 @@ const mongoose = require('mongoose');
 
 const storeSchema = new mongoose.Schema(
     {
-        name: {
+        storeName: {
           type: String,
-          required: [true, 'Please provide your name'],
+          required: [true, 'Please provide the store name'],
           maxlength: 50,
         },
         address: {
           type: String,
-          required: [true, 'Please provide the description'],
+          required: [true, 'Please provide the store address'],
           maxlength: 100,
         },
         state: {
           type: String,
-          required: [true, 'Please provide the book title'],
+          required: [true, 'Please provide the store state'],
           maxlength: 50,
         },
         phoneNumber: {
             type: Number,
-            required: [true, 'Please provide the link']
+            required: [true, 'Please provide the employee phonenumber']
           },
         employee: {
             type: String,

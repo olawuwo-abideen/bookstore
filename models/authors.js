@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 const authorSchema = new mongoose.Schema(
     {
-        name: {
+        fullName: {
           type: String,
           required: [true, 'Please provide your name'],
           maxlength: 50,

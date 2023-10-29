@@ -4,14 +4,9 @@ const mongoose = require('mongoose');
 
 const employeeSchema = new mongoose.Schema(
     {
-        firstName: {
+        fullName: {
           type: String,
           required: [true, 'Please provide your first name'],
-          maxlength: 50,
-        },
-        lastName: {
-          type: String,
-          required: [true, 'Please provide the description'],
           maxlength: 50,
         },
         birthDate: {
