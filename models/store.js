@@ -21,7 +21,7 @@ const storeSchema = new mongoose.Schema(
         },
         phoneNumber: {
             type: Number,
-            required: [true, 'Please provide the employee phonenumber']
+            required: [true, 'Please provide the employee phone number']
           },
         employee: {
             type: String,

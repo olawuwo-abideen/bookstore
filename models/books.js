@@ -18,6 +18,7 @@ const bookSchema = new mongoose.Schema(
           type: Number,
           required: [true, 'Please provide the ISBN number'],
           maxlength: 30,
+          unique: true,
         },
         store: {
             type: String,

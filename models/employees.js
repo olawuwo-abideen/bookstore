@@ -45,7 +45,11 @@ const employeeSchema = new mongoose.Schema(
             required: [true, 'Please provide the store name'],
             maxlength: 12,
           },
-          
+          password: {
+            type: String,
+            required: [true, 'Please provide password'],
+            minlength: 6,
+          },
       },
 
 )

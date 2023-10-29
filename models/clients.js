@@ -27,6 +27,11 @@ const clientSchema = new mongoose.Schema(
             ],
             unique: true,
           },
+          password: {
+            type: String,
+            required: [true, 'Please provide password'],
+            minlength: 6,
+          },
       },
 
 )
