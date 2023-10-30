@@ -18,7 +18,6 @@ const connectDB = require('./db/connect');
 
 //  routers
 const  authorRouter = require('./routes/authorRoutes')
-// const  bookRouter = require('./routes/bookRoutes')
 const  booksaleRouter = require('./routes/clientRoutes')
 const  clientreviewRouter = require('./routes/clientreviewRoutes')
 const  employeeRouter = require('./routes/employeeRoutes')
