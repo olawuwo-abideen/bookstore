@@ -1,6 +1,7 @@
 # Bookstore
 
-A bookstore app
+Backend to bookstore application that allows book enthusiasts to browse, search for, purchase, and manage their books collections, author can add books and track booksales, This
+application aims to provide an extensive library of books and seamless e-commerce features.
 
 ## Built With:
 
