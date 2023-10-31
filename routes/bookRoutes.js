@@ -12,7 +12,7 @@ const {
     getBooksReviews
     } = require('../controllers/books')
 
-router.route('/').get(getAllBooks).post(createBook)
+router.route('book/').get(getAllBooks).post(createBook)
 router.route('/book/:id').get(getSingleBook).patch(updateBook).delete(deleteBook)
 router.route('/book/:id/authors').get(getBooksAuthors)
 router.route('/book/:id/reviews').get(getBooksReviews)
